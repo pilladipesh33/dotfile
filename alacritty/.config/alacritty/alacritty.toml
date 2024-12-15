@@ -1,0 +1,33 @@
+general.import = ["~/.config/alacritty/oxocarbon-dark.toml"]
+
+[window]
+padding.x = 10
+padding.y = 10
+
+decorations = "Full"
+decorations_theme_variant = "Dark" # "Dark"
+
+opacity = 0.5
+blur = true
+
+[font]
+
+normal.family = "JetBrainsMono Nerd Font"
+bold.family = "JetBrainsMono Nerd Font"
+italic.family = "JetBrainsMono Nerd Font"
+bold_italic.family = "JetBrainsMono Nerd Font"
+
+size = 12.0
+
+[selection]
+save_to_clipboard = true
+
+[mouse]
+hide_when_typing = true
+
+[keyboard]
+bindings = [
+  { key= 'V', mods= "Control", action= 'Paste' },
+  # { key= 'C', mods= "Control", action= 'Copy' }
+]
+
