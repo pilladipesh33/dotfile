@@ -5,53 +5,45 @@ return {
   dependencies = {
     "windwp/nvim-ts-autotag",
   },
-  config = function()
-    -- import nvim-treesitter plugin
-    require("nvim-treesitter.configs").setup({
-      -- enable syntax highlighting
-      highlight = {
-        enable = true,
+  opts = {
+    highlight = { enable = true },
+    indent = { enable = true },
+    autotag = { enable = true },
+    ensure_installed = {
+      "json",
+      "javascript",
+      "typescript",
+      "tsx",
+      "yaml",
+      "html",
+      "css",
+      "prisma",
+      "markdown",
+      "markdown_inline",
+      "graphql",
+      "bash",
+      "lua",
+      "vim",
+      "query",
+      "vimdoc",
+      "c",
+      "git_config",
+      "gitcommit",
+      "git_rebase",
+      "gitignore",
+      "gitattributes",
+    },
+    incremental_selection = {
+      enable = true,
+      keymaps = {
+        init_selection = "<C-space>",
+        node_incremental = "<C-space>",
+        scope_incremental = false,
+        node_decremental = "<bs>",
       },
-      -- enable indentation
-      indent = { enable = true },
-      -- enable autotagging (w/ nvim-ts-autotag plugin)
-      autotag = {
-        enable = true,
-      },
-      -- ensure these language parsers are installed
-      ensure_installed = {
-        "json",
-        "javascript",
-        "typescript",
-        "tsx",
-        "yaml",
-        "html",
-        "css",
-        "prisma",
-        "markdown",
-        "markdown_inline",
-        "graphql",
-        "bash",
-        "lua",
-        "vim",
-        "query",
-        "vimdoc",
-        "c",
-        "git_config",
-        "gitcommit",
-        "git_rebase",
-        "gitignore",
-        "gitattributes",
-      },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "<C-space>",
-          node_incremental = "<C-space>",
-          scope_incremental = false,
-          node_decremental = "<bs>",
-        },
-      },
-    })
+    },
+  },
+  config = function(_, opts)
+    require("nvim-treesitter.configs").setup(opts)
   end,
 }
