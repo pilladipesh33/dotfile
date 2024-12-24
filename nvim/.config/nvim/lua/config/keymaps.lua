@@ -33,13 +33,12 @@ keymap.set("n", "<leader>i", function()
   require("craftzdog.lsp").toggleInlayHints()
 end)
 
--- -- Move lines up and down in normal mode using Ctrl+j and Ctrl+k
-keymap.set("n", "<C-j>", ":m .+1<CR>==", { desc = "Move line down" })
-keymap.set("n", "<C-k>", ":m .-2<CR>==", { desc = "Move line up" })
+-- lazy
+keymap.set("n", "<leader>l", ":Lazy<cr>", { desc = "Lazy" })
 
--- -- Move lines up and down in visual mode using Ctrl+j and Ctrl+k
-keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
-keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+-- -- Move lines up and down in normal mode using Ctrl+j and Ctrl+k
+keymap.set("n", "<A-j>", ":m.+1<CR>==", { desc = "Move line down" })
+keymap.set("n", "<A-k>", ":m.-2<CR>==", { desc = "Move line up" })
 
 -- -- Replace lazygit with neogit
 keymap.set("n", "<leader>gg", vim.cmd.Git, { desc = "Open Fugitive" })
@@ -60,3 +59,24 @@ keymap.set("n", "<space>gb", ":Git branch ", { desc = "Git branch" })
 keymap.set("n", "<space>go", ":Git checkout ", { desc = "Git checkout" })
 keymap.set("n", "<space>gps", ":Dispatch! git push<CR>", { desc = "Git push" })
 keymap.set("n", "<space>gpl", ":Dispatch! git pull<CR>", { desc = "Git pull" })
+
+-- Code/LSP
+keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
+keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+keymap.set("n", "<leader>cl", ":LspInfo<cr>", { desc = "LSP Info" })
+keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
+keymap.set("n", "K", function()
+  return vim.lsp.buf.hover()
+end, { desc = "Hover" })
+keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Goto Declaration" })
+keymap.set("n", "gK", vim.lsp.buf.signature_help, { desc = "Signature Help" })
+keymap.set("n", "gr", ":Telescope lsp_references<cr>", { desc = "Goto References" })
+keymap.set("n", "gI", function()
+  require("telescope.builtin").lsp_implementations({ reuse_win = true })
+end, { desc = "Goto Implementation" })
+keymap.set("n", "gd", function()
+  require("telescope.builtin").lsp_definitions({ reuse_win = true })
+end, { desc = "Goto Definition" })
+keymap.set("n", "gy", function()
+  require("telescope.builtin").lsp_type_definitions({ reuse_win = true })
+end, { desc = "Goto Type Definition" })

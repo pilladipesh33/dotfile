@@ -10,7 +10,6 @@ return {
         typescript = { "prettier" },
         javascriptreact = { "prettier" },
         typescriptreact = { "prettier" },
-        svelte = { "prettier" },
         css = { "prettier" },
         html = { "prettier" },
         json = { "prettier" },
@@ -20,15 +19,40 @@ return {
         liquid = { "prettier" },
         lua = { "stylua" },
         python = { "isort", "black" },
+        toml = { "taplo" },
       },
-      format_on_save = {
-        lsp_fallback = true,
-        async = false,
-        timeout_ms = 1000,
+      -- format_on_save = {
+      --   lsp_fallback = true,
+      --   async = true,
+      --   timeout_ms = 1000,
+      -- },
+
+      format_after_save = function()
+        if not vim.g.autoformat then
+          return
+        else
+          if vim.bo.filetype == "ps1" then
+            vim.lsp.buf.format()
+            return
+          end
+          return { lsp_format = "fallback" }
+        end
+      end,
+
+      formatters = {
+        goimports_reviser = {
+          command = "goimports-reviser",
+          args = { "-output", "stdout", "$FILENAME" },
+        },
       },
     })
 
-    -- Keymap to trigger formatting manually
+    -- Override prettier's default indent type
+    require("conform").formatters.prettier = {
+      prepend_args = { "--tab-width", "4" },
+    }
+
+    -- -- Keymap to trigger formatting manually
     vim.keymap.set({ "n", "v" }, "<leader>mp", function()
       conform.format({
         lsp_fallback = true,
