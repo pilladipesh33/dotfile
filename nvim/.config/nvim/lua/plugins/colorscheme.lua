@@ -2,7 +2,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "cyberdream",
+      colorscheme = "vague",
     },
   },
   {
@@ -15,22 +15,19 @@ return {
     end,
   },
   {
-    "scottmckendry/cyberdream.nvim",
-    -- dev = true,
-    lazy = false,
+    -- vague colorscheme
+    "vague2k/vague.nvim",
     priority = 1000,
     config = function()
-      require("cyberdream").setup({
+      require("vague").setup({
         transparent = true,
-        italic_comments = true,
-        hide_fillchars = true,
-        terminal_colors = false,
-        cache = true,
-        borderless_telescope = { border = false, style = "flat" },
-        theme = { variant = "auto" },
+        style = {
+          boolean = "bold",
+          strings = "none",
+          functions = "italic",
+          variables = "italic",
+        },
       })
-
-      vim.cmd("colorscheme cyberdream")
     end,
   },
 }
