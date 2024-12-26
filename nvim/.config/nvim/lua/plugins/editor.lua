@@ -62,4 +62,9 @@ return {
       require("tiny-inline-diagnostic").setup()
     end,
   },
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = true,
+  },
 }
