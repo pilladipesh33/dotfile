@@ -11,7 +11,7 @@ fi
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# plugins=(git, npm, brew)
+# plugins=(git npm brew)
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -46,6 +46,7 @@ zinit snippet OMZP::archlinux
 zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::bun
+zinit snippet OMZP::common-aliases
 
 #Load completion
 autoload -U compinit && compinit
