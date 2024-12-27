@@ -28,4 +28,7 @@ return {
       indent = { char = "┊" },
     },
   },
+  { "nvzone/showkeys", cmd = "ShowkeysToggle", lazy = true, opts = {
+    position = "top-right",
+  } },
 }

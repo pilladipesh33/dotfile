@@ -70,3 +70,5 @@ end, { desc = "Goto Definition" })
 keymap.set("n", "gy", function()
   require("telescope.builtin").lsp_type_definitions({ reuse_win = true })
 end, { desc = "Goto Type Definition" })
+
+keymap.set("n", "<leader>ut", ":ShowkeysToggle")
