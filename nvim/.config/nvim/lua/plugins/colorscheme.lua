@@ -2,30 +2,36 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "cyberdream",
+      colorscheme = "github_dark_default",
     },
   },
   {
-    "sainnhe/sonokai",
-    priority = 1000,
+    "projekt0n/github-nvim-theme",
+    name = "github-theme",
+    lazy = true, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
-      vim.g.sonokai_transparent_background = "1"
-      vim.g.sonokai_enable_italic = "1"
-      vim.g.sonokai_style = "andromeda"
-    end,
-  },
-  {
-    -- vague colorscheme
-    "vague2k/vague.nvim",
-    priority = 1000,
-    config = function()
-      require("vague").setup({
-        transparent = true,
-        style = {
-          boolean = "bold",
-          strings = "none",
-          functions = "italic",
-          variables = "italic",
+      require("github-theme").setup({
+        options = {
+          transparent = true,
+          styles = {
+            comments = "italic",
+            functions = "italic",
+            variables = "italic",
+            conditionals = "bold",
+            strings = "NONE",
+          },
+          inverse = {
+            match_paren = true,
+            -- visual = true,
+          },
+          darken = {
+            floats = true,
+            sidebars = {
+              enable = true,
+              list = {},
+            },
+          },
         },
       })
     end,
