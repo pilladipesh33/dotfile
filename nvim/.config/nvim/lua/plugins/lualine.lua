@@ -7,7 +7,7 @@ return {
     },
     opts = {
       options = {
-        theme = "seoul256",
+        theme = "solarized_dark",
         component_separators = { left = "│", right = "│" },
         section_separators = { left = "", right = "" },
         globalstatus = true,
