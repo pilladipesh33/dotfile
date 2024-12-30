@@ -21,10 +21,10 @@ return {
             conditionals = "bold",
             strings = "NONE",
           },
-          inverse = {
-            match_paren = true,
-            -- visual = true,
-          },
+          -- inverse = {
+          --   match_paren = true,
+          --   -- visual = true,
+          -- },
           darken = {
             floats = true,
             sidebars = {
