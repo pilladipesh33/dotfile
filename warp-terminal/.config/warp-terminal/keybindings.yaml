@@ -1,0 +1,5 @@
+---
+"terminal:paste": ctrl-v
+"editor_view:move_to_line_end": ctrl-e
+"editor_view:move_to_line_start": ctrl-a
+"editor_view:select_all": ctrl-shift-A
