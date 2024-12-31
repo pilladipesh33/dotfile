@@ -16,8 +16,8 @@ gtk-titlebar = false
 gtk-tabs-location = left
 
 #theme
-theme = xcodedarkhc
-background = #000000
+theme = cyberdream
+# background = #000000
 background-opacity = 0.75
 background-blur-radius = 21
 

@@ -32,7 +32,7 @@
     "AltScreenPadding": "\"MatchBlocklist\"",
     "WelcomeTipsFeaturesUsed": "[{\"Action\":\"CommandPalette\"},{\"Hint\":\"BlockAction\"},{\"Hint\":\"CreateBlock\"},{\"Action\":\"OpenWarpDrive\"},{\"Hint\":\"BlockSelect\"},{\"Action\":\"SplitPane\"},{\"Action\":\"CommandSearch\"},{\"Action\":\"ThemePicker\"}]",
     "CrashReportingEnabled": "true",
-    "SelectedSystemThemes": "{\"light\":\"Light\",\"dark\":{\"CustomBase16\":{\"name\":\"Base16 Material Darker\",\"path\":\"/home/d3pth/.local/share/warp-terminal/themes/base16_material_darker.yaml\"}}}",
+    "SelectedSystemThemes": "{\"light\":\"Light\",\"dark\":{\"Custom\":{\"name\":\"Cyberdream\",\"path\":\"/home/d3pth/.local/share/warp-terminal/themes/cyberdream.yaml\"}}}",
     "FontName": "\"JetBrainsMono Nerd Font Mono\"",
     "MatchNotebookToMonospaceFontSize": "true",
     "AIRequestLimitInfo": "{\"limit\":100,\"num_requests_used_since_refresh\":46,\"next_refresh_time\":\"2025-01-06T06:34:28.312112Z\",\"is_unlimited\":false,\"request_limit_refresh_duration\":\"Monthly\",\"accepted_autosuggestions_limit\":250,\"is_unlimited_autosuggestions\":false,\"accepted_autosuggestions_since_last_refresh\":8}",
