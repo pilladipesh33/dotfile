@@ -12,9 +12,9 @@ window-padding-balance = true
 font-feature = "liga" 1"calt" 1"dlig" 1,"ss07" 1,"ss08" 1,"zero" 1"tnum" 1"cv03","cv04" 1,"cv01" 1,"cv09","cv02" 1
 font-family = JetBrainsMono Nerd Font
 mouse-hide-while-typing = true
-gtk-titlebar = false
-gtk-tabs-location = left
-font-size = 12
+# gtk-titlebar = false
+# gtk-tabs-location = left
+# font-size = 12
 
 #theme
 theme = cyberdream
