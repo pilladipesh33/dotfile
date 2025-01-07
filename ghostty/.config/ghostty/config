@@ -17,9 +17,8 @@ gtk-tabs-location = left
 font-size = 12
 
 #theme
-theme = GitHub Dark
-# background = #000000
-background-opacity = 0.75
+theme = materialshell
+background-opacity = 0.9
 background-blur-radius = 21
 
 confirm-close-surface = false
