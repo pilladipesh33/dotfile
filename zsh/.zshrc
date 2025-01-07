@@ -88,7 +88,8 @@ alias rz='source ~/.zshrc'
 alias lg='lazygit'
 alias denotd='deno task dev'
 alias new='mkdir'
-# alias bunrd='bun run dev'
+alias bunrd='bun run dev'
+alias bunx='bun x'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
