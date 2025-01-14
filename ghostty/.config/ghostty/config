@@ -13,12 +13,11 @@ font-feature = "liga" 1"calt" 1"dlig" 1,"ss07" 1,"ss08" 1,"zero" 1"tnum" 1"cv03"
 font-family = JetBrainsMono Nerd Font
 mouse-hide-while-typing = true
 gtk-titlebar = false
-gtk-tabs-location = left
 font-size = 12
 
 #theme
 theme = materialshell
-background-opacity = 0.9
+background-opacity = 0.85
 background-blur-radius = 21
 
 confirm-close-surface = false
