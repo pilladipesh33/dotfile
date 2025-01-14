@@ -5,20 +5,26 @@ shell-integration = zsh
 custom-shader-animation = true
 clipboard-read = allow
 clipboard-write = allow
-window-theme = dark
-window-padding-x = 8
-window-padding-y = 6
-window-padding-balance = true
+copy-on-select = true
 font-feature = "liga" 1"calt" 1"dlig" 1,"ss07" 1,"ss08" 1,"zero" 1"tnum" 1"cv03","cv04" 1,"cv01" 1,"cv09","cv02" 1
 font-family = JetBrainsMono Nerd Font
 mouse-hide-while-typing = true
-gtk-titlebar = false
+# gtk-titlebar = false
 font-size = 12
+
+# Window
+window-vsync = true
+window-inherit-font-size = true
+window-theme = ghostty
+window-padding-x = 8
+window-padding-y = 6
+window-padding-balance = true
 
 #theme
 theme = materialshell
 background-opacity = 0.85
-background-blur-radius = 21
+background-blur-radius = 40
+macos-titlebar-style = transparent
 
 confirm-close-surface = false
 auto-update = check
