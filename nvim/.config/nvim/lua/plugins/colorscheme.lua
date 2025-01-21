@@ -2,8 +2,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "github_dark_default",
-      -- colorscheme = "mellow",
+      -- colorscheme = "github_dark_default",
+      colorscheme = "evergarden",
     },
   },
   {
@@ -54,4 +54,21 @@ return {
   --     })
   --   end,
   -- },
+  {
+    "comfysage/evergarden",
+    priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
+    opts = {
+      transparent_background = true,
+      variant = "medium", -- 'hard'|'medium'|'soft'
+      style = {
+        tabline = { "reverse" },
+        search = { "italic" },
+        incsearch = { "reverse" },
+        types = { "italic" },
+        keyword = { "italic" },
+        comment = { "italic" },
+        sign = { highlight = false },
+      },
+    },
+  },
 }

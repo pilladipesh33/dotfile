@@ -7,7 +7,10 @@ clipboard-read = allow
 clipboard-write = allow
 copy-on-select = true
 font-feature = "liga" 1"calt" 1"dlig" 1,"ss07" 1,"ss08" 1,"zero" 1"tnum" 1"cv03","cv04" 1,"cv01" 1,"cv09","cv02" 1
+
 font-family = JetBrainsMono Nerd Font
+font-family-italic = Cascadia Mono NF
+
 mouse-hide-while-typing = true
 gtk-titlebar = false
 font-size = 12
