@@ -9,7 +9,7 @@ copy-on-select = true
 font-feature = "liga" 1"calt" 1"dlig" 1,"ss07" 1,"ss08" 1,"zero" 1"tnum" 1"cv03","cv04" 1,"cv01" 1,"cv09","cv02" 1
 
 font-family = JetBrainsMono Nerd Font
-font-family-italic = Cascadia Mono NF
+# font-family-italic = Cascadia Mono NF
 
 mouse-hide-while-typing = true
 gtk-titlebar = false
@@ -24,9 +24,8 @@ window-padding-y = 6
 window-padding-balance = true
 
 #theme
-theme = materialshell
-background = #222222
-# background-opacity = 0.80
+theme = vesper
+background-opacity = 0.50
 background-blur-radius = 40
 macos-titlebar-style = transparent
 
