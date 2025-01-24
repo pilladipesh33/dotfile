@@ -72,3 +72,7 @@ keymap.set("n", "gy", function()
 end, { desc = "Goto Type Definition" })
 
 keymap.set("n", "<leader>ut", ":ShowkeysToggle")
+
+-- Typr plugin
+keymap.set("n", "<leader>ty", ":Typr<CR>", { noremap = true })
+keymap.set("n", "<leader>ts", ":TyprStats<CR>", { noremap = true })

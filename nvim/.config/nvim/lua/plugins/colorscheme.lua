@@ -3,7 +3,7 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "github_dark_default",
-      colorscheme = "evergarden",
+      colorscheme = "vesper",
     },
   },
   {
@@ -37,38 +37,23 @@ return {
       })
     end,
   },
-  -- {
-  --   "scottmckendry/cyberdream.nvim",
-  --   priority = 1000,
-  --   config = function()
-  --     require("cyberdream").setup({
-  --       transparent = true,
-  --       italic_comments = true,
-  --       hide_fillchars = true,
-  --       terminal_colors = false,
-  --       cache = true,
-  --       borderless_telescope = { border = false, style = "flat" },
-  --       theme = {
-  --         variant = "auto",
-  --       },
-  --     })
-  --   end,
-  -- },
   {
-    "comfysage/evergarden",
-    priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
-    opts = {
-      transparent_background = true,
-      variant = "medium", -- 'hard'|'medium'|'soft'
-      style = {
-        tabline = { "reverse" },
-        search = { "italic" },
-        incsearch = { "reverse" },
-        types = { "italic" },
-        keyword = { "italic" },
-        comment = { "italic" },
-        sign = { highlight = false },
-      },
-    },
+    "datsfilipe/vesper.nvim",
+    lazy = true,
+    priority = 1000,
+    config = function()
+      require("vesper").setup({
+        transparent = true, -- Boolean: Sets the background to transparent
+        italics = {
+          comments = true, -- Boolean: Italicizes comments
+          keywords = true, -- Boolean: Italicizes keywords
+          functions = true, -- Boolean: Italicizes functions
+          strings = true, -- Boolean: Italicizes strings
+          variables = false, -- Boolean: Italicizes variables
+        },
+        overrides = {}, -- A dictionary of group names, can be a function returning a dictionary or a table.
+        palette_overrides = {},
+      })
+    end,
   },
 }
