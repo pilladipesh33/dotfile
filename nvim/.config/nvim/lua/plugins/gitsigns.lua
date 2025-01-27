@@ -10,7 +10,7 @@ return {
         delete = { text = signs.delete },
         topdelete = { text = signs.topdelete },
         changedelete = { text = signs.changedelete },
-        untracked = { text = signs.untracked },
+        -- untracked = { text = signs.untracked },
       },
       on_attach = function(buffer)
         local gs = package.loaded.gitsigns
