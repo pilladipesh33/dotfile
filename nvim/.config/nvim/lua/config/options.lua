@@ -24,6 +24,7 @@ opt.wrap = true
 opt.linebreak = true
 -- opt.spelllang = "en_nz"
 opt.showtabline = 0
+opt.conceallevel = 2
 
 -- Make cursor blink
 opt.guicursor = {
