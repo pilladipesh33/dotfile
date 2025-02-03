@@ -12,7 +12,7 @@ font-family = JetBrainsMono Nerd Font
 # font-family-italic = Cascadia Mono NF
 
 mouse-hide-while-typing = true
-gtk-titlebar = false
+# gtk-titlebar = true
 font-size = 12
 
 # Window
@@ -27,7 +27,7 @@ window-padding-balance = true
 theme = vesper
 background-opacity = 0.75
 background-blur-radius = 40
-macos-titlebar-style = transparent
+# macos-titlebar-style = transparent
 
 confirm-close-surface = false
 auto-update = check
