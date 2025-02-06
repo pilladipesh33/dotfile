@@ -52,9 +52,7 @@ keybind = super+j=goto_split:bottom
 keybind = super+k=goto_split:top
 keybind = super+h=goto_split:left
 keybind = super+l=goto_split:right
-
 keybind = super+z=toggle_split_zoom
-
 keybind = super+e=equalize_splits
 
 # other
