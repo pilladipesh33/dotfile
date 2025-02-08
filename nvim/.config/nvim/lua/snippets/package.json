@@ -1,0 +1,23 @@
+{
+  "name": "My custom snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "typescript",
+          "typescriptreact",
+          "vtsls"
+        ],
+        "path": "./typescriptreact.json"
+      },
+      {
+        "language": [
+          "typescript",
+          "typescriptreact",
+          "vtsls"
+        ],
+        "path": "./typescript.json"
+      }
+    ]
+  }
+}
