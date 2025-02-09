@@ -105,3 +105,4 @@ export NVM_DIR="$HOME/.nvm"
 
 
 eval "$(starship init zsh)"
+export PATH=$HOME/go/bin:$PATH
