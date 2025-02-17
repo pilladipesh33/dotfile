@@ -26,7 +26,7 @@ disabled = true
 [git_branch]
 style = "bg: green"
 symbol = "󰘬"
-truncation_length = 4
+# truncation_length = 4
 truncation_symbol = ""
 format = "• [](bold fg:green)[$symbol $branch(:$remote_branch)](fg:black bg:green)[ ](bold fg:green)"
 
@@ -97,3 +97,4 @@ format = '[](bold fg:green)[$path ]($style)[](bold fg:green)'
 [cmd_duration]
 min_time = 0
 format = '[](bold fg:yellow)[ $duration](bold bg:yellow fg:black)[](bold fg:yellow) •• '
+
