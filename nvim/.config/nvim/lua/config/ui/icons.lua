@@ -32,7 +32,7 @@ return {
     -- delete = " ",
     -- topdelete = " ",
     -- changedelete = " ▎",
-    -- untracked = " ▎",
+    untracked = " ▎",
     add = "+",
     change = "~",
     delete = "_",

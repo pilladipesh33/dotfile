@@ -5,6 +5,9 @@ return {
     lazy = false,
     ---@type snacks.Config
     opts = {
+      matcher = {
+        frecency = true,
+      },
       dashboard = {
         enabled = true,
         sections = {
@@ -34,6 +37,42 @@ return {
             indent = 3,
           },
           { section = "startup" },
+        },
+      },
+      layout = {
+        preset = "ivy",
+      },
+      layouts = {
+        ivy = {
+          layout = {
+            box = "vertical",
+            backdrop = false,
+            row = -1,
+            width = 0,
+            height = 0.5,
+            border = "top",
+            title = " {title} {live} {flags}",
+            title_pos = "left",
+            { win = "input", height = 1, border = "bottom" },
+            {
+              box = "horizontal",
+              { win = "list", border = "none" },
+              { win = "preview", title = "{preview}", width = 0.5, border = "left" },
+            },
+          },
+        },
+      },
+      notifier = {
+        enabled = true,
+        top_down = false,
+      },
+      image = {
+        enabled = true,
+        doc = {
+          inline = vim.g.neovim_mode == "skitty" and true or false,
+          float = true,
+          max_width = vim.g.neovim_mode == "skitty" and 20 or 60,
+          max_height = vim.g.neovim_mode == "skitty" and 10 or 30,
         },
       },
     },

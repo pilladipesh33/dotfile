@@ -14,73 +14,16 @@ return {
     },
   },
   config = function()
-    local telescope = require("telescope")
     local actions = require("telescope.actions")
-
-    local select_one_or_multi = function(prompt_bufnr)
-      local picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
-      local multi = picker:get_multi_selection()
-      if not vim.tbl_isempty(multi) then
-        require("telescope.actions").close(prompt_bufnr)
-        for _, j in pairs(multi) do
-          if j.path ~= nil then
-            vim.cmd(string.format("%s %s", "edit", j.path))
-          end
-        end
-      else
-        require("telescope.actions").select_default(prompt_bufnr)
-      end
-    end
-
-    local home_dir = os.getenv("HOME")
-    if vim.fn.has("win32") == 1 then
-      home_dir = "C:/Users/" .. vim.fn.expand("$USERNAME")
-    end
-
-    telescope.setup({
-      extensions = {
-        resession = {
-          path_substitutions = {
-            { find = home_dir .. "/git/", replace = "󰊢 " },
-          },
-        },
-      },
+    require("telescope").setup({
       pickers = {
         find_files = {
-          find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
-        },
-        buffers = {
-          theme = "dropdown",
-          previewer = false,
-          mappings = {
-            i = {
-              ["<c-d>"] = "delete_buffer",
-            },
-          },
+          -- find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+          find_command = { "rg", "--files", "--sort=modified" },
         },
       },
       defaults = {
-        hidden = true,
-        prompt_prefix = "   ",
-        selection_caret = "  ",
-        entry_prefix = "  ",
-
-        sorting_strategy = "ascending",
-        layout_strategy = "horizontal",
-
-        layout_config = {
-          horizontal = {
-            prompt_position = "top",
-            preview_width = 0.55,
-            results_width = 0.8,
-          },
-          vertical = {
-            mirror = false,
-          },
-          width = 0.87,
-          height = 0.80,
-          preview_cutoff = 120,
-        },
+        sorting_strategy = "limit",
         path_display = {
           filename_first = {
             reverse_directories = true,
@@ -91,10 +34,103 @@ return {
             ["<C-k>"] = actions.move_selection_previous, -- move to prev result
             ["<C-j>"] = actions.move_selection_next, -- move to next result
             ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-            ["<cr>"] = select_one_or_multi,
+            -- ["<cr>"] = select_one_or_multi,
           },
         },
       },
     })
   end,
+  keys = {
+    {
+      "<leader>fF",
+      function()
+        -- Get the directory of the currently active buffer
+        local cwd = require("telescope.utils").buffer_dir()
+        -- Use Telescope's find_files with a specific cwd
+        require("telescope.builtin").find_files(require("telescope.themes").get_ivy({
+          cwd = cwd,
+          prompt_title = "Files in " .. cwd,
+        }))
+      end,
+      desc = "Find Files (Buffer Dir)",
+    },
+
+    {
+      "<leader>ff",
+      function()
+        local cwd = vim.fn.getcwd()
+        require("telescope").extensions.frecency.frecency(require("telescope.themes").get_ivy({
+          workspace = "CWD",
+          cwd = cwd,
+          prompt_title = "FRECENCY " .. cwd,
+        }))
+      end,
+      desc = "Find Files (Root Dir)",
+    },
+    {
+      "<leader><Space>",
+      function()
+        local cwd = vim.fn.getcwd()
+        require("telescope").extensions.frecency.frecency(require("telescope.themes").get_ivy({
+          workspace = "CWD",
+          cwd = cwd,
+          prompt_title = "FRECENCY " .. cwd,
+        }))
+      end,
+      desc = "Find Files (Root Dir) [Space]",
+    },
+
+    {
+      "<leader>sG",
+      function()
+        local cwd = require("telescope.utils").buffer_dir()
+        require("telescope.builtin").live_grep(require("telescope.themes").get_ivy({
+          cwd = cwd,
+          prompt_title = "GREP " .. cwd,
+        }))
+      end,
+      desc = "[P]Grep (buffer dir)",
+    },
+
+    -- I want to grep with fzf-lua, so disabling/disable this keymap for telescope
+    -- { "<leader>sg", LazyVim.pick("live_grep", { root = false, theme = "ivy" }), desc = "Grep (Root Dir)" },
+    -- {
+    --   "<leader>sg",
+    --   function()
+    --     local cwd = vim.fn.getcwd()
+    --     require("telescope.builtin").live_grep(require("telescope.themes").get_ivy({
+    --       -- gets current working directory
+    --       cwd = cwd,
+    --       prompt_title = "GREP " .. cwd,
+    --     }))
+    --   end,
+    --   desc = "[P]Grep (Root Dir)",
+    -- },
+
+    -- { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "Status" },
+    {
+      "<leader>gs",
+      function()
+        require("telescope.builtin").git_status(require("telescope.themes").get_ivy({
+          layout_config = {
+            -- Set preview width, 0.7 sets it to 70% of the window width
+            preview_width = 0.7,
+            -- height = 0.2,
+          },
+          initial_mode = "normal", -- Start in normal mode
+        }))
+      end,
+      desc = "Git Status (ivy theme with custom preview size)",
+    },
+
+    {
+      "<leader><BS>",
+      "<cmd>e #<cr>",
+      desc = "Alternate buffer",
+    },
+
+    -- fzf-lua takes over this keymap, since I disaled fzf-lua, this keymap is
+    -- gone, so I need to add it here for it to work
+    { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help Pages" },
+  },
 }
