@@ -2,9 +2,23 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "github_dark_default",
-      colorscheme = "tokyonight-night",
+      colorscheme = "cyberdream",
     },
+  },
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("cyberdream").setup({
+        variant = "auto",
+        transparent = true,
+        saturation = 0.7,
+        italic_comments = true,
+        hide_fillchars = true,
+        cache = true,
+      })
+    end,
   },
   {
     "folke/tokyonight.nvim",

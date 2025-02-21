@@ -1,14 +1,19 @@
-font-family = "JetBrainsMonoNL Nerd Font Mono"
-font-family-bold = "JetBrainsMonoNL Nerd Font Mono"
-font-family-italic= "Maple Mono"
-font-family-bold-italic = "Maple Mono"
+# font-family = "JetBrainsMonoNL Nerd Font Mono"
+# font-family-bold = "JetBrainsMonoNL Nerd Font Mono"
+font-family = "CommitMono"
+# font-family-italic= "Maple Mono"
+# font-family-bold-italic = "Maple Mono"
 font-size = 12
+window-inherit-font-size = true
 
-theme = eldrich
+alpha-blending = linear
+
+theme = carbonfox
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = block
 adjust-cell-height = 35%
-# background-opacity = 0.8
+background-opacity = 0.9
+background-blur = true
 
 mouse-hide-while-typing = true
 mouse-scroll-multiplier = 2
@@ -18,10 +23,11 @@ window-padding-balance = true
 window-padding-x = 8
 window-padding-y = 8,4
 window-save-state = never
+window-decoration = server
 macos-titlebar-style=transparent
 confirm-close-surface = false
 # window-colorspace = "display-p3"
-# background = #1C2021
+# background = #ff0000
 # foreground = #d4be98
 
 # keybindings
