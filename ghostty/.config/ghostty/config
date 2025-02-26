@@ -8,11 +8,11 @@ window-inherit-font-size = true
 
 alpha-blending = linear
 
-theme = carbonfox
+theme = lovelace
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = block
 adjust-cell-height = 35%
-background-opacity = 0.9
+# background-opacity = 0.9
 background-blur = true
 
 mouse-hide-while-typing = true
