@@ -2,7 +2,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rusty",
+      colorscheme = "poimandres",
     },
   },
   {
@@ -21,33 +21,20 @@ return {
     end,
   },
   {
-    "folke/tokyonight.nvim",
+    "olivercederborg/poimandres.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      require("tokyonight").setup({
-        transparent = true,
-        style = "night",
-        styles = {
-          functions = { italic = true },
-          -- variables = { italic = true },
-          floats = "transparent",
+      local p = require("poimandres.palette")
+      require("poimandres").setup({
+        disable_background = true, -- disable background
+        disable_float_background = true, -- disable background for floats
+        highlight_groups = {
+          LspReferenceText = { bg = p.background1 },
+          LspReferenceWrite = { bg = p.background1 },
+          LspReferenceRead = { bg = p.background1 },
         },
-        lualine_bold = true,
       })
-    end,
-  },
-  {
-    "armannikoyan/rusty",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      transparent = true,
-      italic_comments = true,
-      underline_current_line = true,
-    },
-    config = function(_, opts)
-      require("rusty").setup(opts)
     end,
   },
 }
