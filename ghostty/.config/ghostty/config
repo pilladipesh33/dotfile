@@ -27,7 +27,7 @@ window-decoration = server
 macos-titlebar-style=transparent
 confirm-close-surface = false
 # window-colorspace = "display-p3"
-# background = #ff0000
+background = #031219
 # foreground = #d4be98
 
 # keybindings
