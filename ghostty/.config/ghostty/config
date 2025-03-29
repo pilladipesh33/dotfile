@@ -1,18 +1,18 @@
-# font-family = "JetBrainsMonoNL Nerd Font Mono"
-# font-family-bold = "JetBrainsMonoNL Nerd Font Mono"
-font-family = "CommitMono"
+font-family = "JetBrainsMonoNL Nerd Font Mono"
+font-family-bold = "JetBrainsMonoNL Nerd Font Mono"
+# font-family = "CommitMono"
 # font-family-italic= "Maple Mono"
 # font-family-bold-italic = "Maple Mono"
-font-size = 12
+font-size = 13
 window-inherit-font-size = true
 
 alpha-blending = linear
 
-theme = lovelace
+theme=GitLab-Dark-Grey
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = block
 adjust-cell-height = 35%
-background-opacity = 0.72
+# background-opacity = 0.72
 background-blur = true
 
 mouse-hide-while-typing = true
@@ -27,7 +27,7 @@ window-decoration = server
 macos-titlebar-style=transparent
 confirm-close-surface = false
 # window-colorspace = "display-p3"
-background = #031219
+# background = #031219
 # foreground = #d4be98
 
 # keybindings

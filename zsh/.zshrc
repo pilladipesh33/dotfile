@@ -106,3 +106,11 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(starship init zsh)"
 export PATH=$HOME/go/bin:$PATH
+
+# pnpm
+export PNPM_HOME="/home/d3pth/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
